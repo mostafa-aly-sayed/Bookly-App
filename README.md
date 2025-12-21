@@ -1,16 +1,64 @@
-# bookly_app
+# 📚 Bookly App
 
-A new Flutter project.
+Once upon a quiet evening, a reader opened an app—not just to browse books, but to discover their next favorite story.  
+That’s where **Bookly** begins.
 
-## Getting Started
+Bookly is a clean and intuitive Flutter application designed for book lovers. It helps users explore featured titles, discover best sellers, and dive into detailed book information—all in one smooth experience.
 
-This project is a starting point for a Flutter application.
+---
 
-A few resources to get you started if this is your first Flutter project:
+## ✨ About Bookly
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+**Bookly App** is a Flutter-based mobile application that focuses on showcasing books in a simple, elegant, and user-friendly way.  
+The app is built around **three core screens**, each crafted to make discovering books enjoyable and effortless.
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+---
+
+## 🏠 Main Screens
+
+### 1️⃣ Home Screen
+The Home Screen is the heart of the app and the first stop for users.
+
+It includes:
+- 📌 **Featured Books** – a highlighted horizontal list of selected books
+- 🔥 **Best Sellers** – a vertical list showcasing popular and trending books
+- 🔍 **Search Icon** – located in the app bar, leading to the Search View
+
+Users can tap on any book to explore its details.
+
+---
+
+### 2️⃣ Book Details Screen
+When a user selects a book, they are navigated to the **Book Details Screen**.
+
+This screen displays:
+- 📖 **Book Name**
+- ✍️ **Author**
+- 💰 **Price**
+- ⭐ **Rating**
+- 🖼️ Book cover and additional visual details
+
+This screen gives readers everything they need to decide if the book is right for them.
+
+---
+
+### 3️⃣ Search Screen
+The Search Screen allows users to quickly find books they’re interested in.
+
+It contains:
+- 🔎 **Search Field** – for typing book names or keywords
+- 📚 **Recommended Books List** – dynamic list of books based on search input
+
+This screen is designed for fast discovery and smooth navigation.
+
+---
+
+## 🚀 Getting Started
+
+This project is built using **Flutter**.
+
+To run the app locally:
+
+```bash
+flutter pub get
+flutter run
