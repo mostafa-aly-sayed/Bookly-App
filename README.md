@@ -20,55 +20,6 @@ The project follows a **Feature-First architecture**, ensuring that each feature
 
 ---
 
-### 📁 Project Structure Overview
-
-```text
-lib/
-│
-├── core/
-│   ├── errors/
-│   │   └── failures.dart
-│   ├── utils/
-│   │   ├── app_router.dart
-│   │   ├── assets.dart
-│   │   └── styles.dart
-│   └── widgets/
-│       └── custom_button.dart
-│
-├── features/
-│   ├── home/
-│   │   ├── data/
-│   │   │   ├── models/
-│   │   │   │   └── book_model/
-│   │   │   └── repos/
-│   │   │       └── home_repo.dart
-│   │   └── presentation/
-│   │       ├── view_models/
-│   │       └── views/
-│   │           ├── widgets/
-│   │           ├── home_view.dart
-│   │           └── book_details_view.dart
-│   │
-│   ├── search/
-│   │   └── presentation/
-│   │       └── views/
-│   │           ├── widgets/
-│   │           └── search_view.dart
-│   │
-│   └── splash/
-│       ├── data/
-│       └── presentation/
-│           ├── view_models/
-│           └── views/
-│               ├── widgets/
-│               └── splash_view.dart
-│
-├── constants.dart
-└── main.dart
-
-
----
-
 ## 🏠 Main Screens
 
 ### 1️⃣ Home Screen
