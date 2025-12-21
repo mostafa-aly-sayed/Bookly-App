@@ -13,6 +13,61 @@ Bookly is a clean and intuitive Flutter application designed for book lovers. It
 The app is built around **three core screens**, each crafted to make discovering books enjoyable and effortless.
 
 ---
+## 🧱 Clean Code & Architecture
+
+Bookly App is built with a strong focus on **Clean Architecture**, **scalability**, and **maintainability**.  
+The project follows a **Feature-First architecture**, ensuring that each feature is isolated, readable, and easy to extend.
+
+---
+
+### 📁 Project Structure Overview
+
+```text
+lib/
+│
+├── core/
+│   ├── errors/
+│   │   └── failures.dart
+│   ├── utils/
+│   │   ├── app_router.dart
+│   │   ├── assets.dart
+│   │   └── styles.dart
+│   └── widgets/
+│       └── custom_button.dart
+│
+├── features/
+│   ├── home/
+│   │   ├── data/
+│   │   │   ├── models/
+│   │   │   │   └── book_model/
+│   │   │   └── repos/
+│   │   │       └── home_repo.dart
+│   │   └── presentation/
+│   │       ├── view_models/
+│   │       └── views/
+│   │           ├── widgets/
+│   │           ├── home_view.dart
+│   │           └── book_details_view.dart
+│   │
+│   ├── search/
+│   │   └── presentation/
+│   │       └── views/
+│   │           ├── widgets/
+│   │           └── search_view.dart
+│   │
+│   └── splash/
+│       ├── data/
+│       └── presentation/
+│           ├── view_models/
+│           └── views/
+│               ├── widgets/
+│               └── splash_view.dart
+│
+├── constants.dart
+└── main.dart
+
+
+---
 
 ## 🏠 Main Screens
 
