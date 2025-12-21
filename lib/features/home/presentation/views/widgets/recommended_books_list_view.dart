@@ -7,16 +7,15 @@ class RecommendedBooksListView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: MediaQuery.of(context).size.height*0.15,
+      height: MediaQuery.of(context).size.height * 0.15,
       child: ListView.builder(
-          scrollDirection: Axis.horizontal,
-          itemBuilder: (context, index)
-          {
-            return const Padding(
-              padding: EdgeInsets.symmetric(horizontal: 5),
-              child: CustomBookItem(),
-            );
-          }
+        scrollDirection: Axis.horizontal,
+        itemBuilder: (context, index) {
+          return const Padding(
+            padding: EdgeInsets.symmetric(horizontal: 5),
+            child: CustomBookItem(),
+          );
+        },
       ),
     );
   }

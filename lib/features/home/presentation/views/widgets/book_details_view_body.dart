@@ -2,29 +2,23 @@ import 'package:bookly_app/features/home/presentation/views/widgets/books_detail
 import 'package:bookly_app/features/home/presentation/views/widgets/custom_book_details_app_bar.dart';
 import 'package:bookly_app/features/home/presentation/views/widgets/recommendations_section.dart';
 import 'package:flutter/material.dart';
+
 class BookDetailsViewBody extends StatelessWidget {
   const BookDetailsViewBody({super.key});
 
-
-
   @override
   Widget build(BuildContext context) {
-
     return CustomScrollView(
       slivers: [
         SliverFillRemaining(
           hasScrollBody: false,
           child: Padding(
             padding: const EdgeInsets.symmetric(horizontal: 30),
-            child:  Column(
+            child: Column(
               children: [
                 const CustomBookDetailsAppBar(),
                 BookDetailsSection(),
-                const Expanded(
-                  child: SizedBox(
-                    height: 20,
-                  ),
-                ),
+                const Expanded(child: SizedBox(height: 20)),
                 RecommendationsSection(),
               ],
             ),
@@ -34,6 +28,3 @@ class BookDetailsViewBody extends StatelessWidget {
     );
   }
 }
-
-
-

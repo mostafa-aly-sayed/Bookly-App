@@ -9,7 +9,6 @@ void main() {
 
 class BooklyApp extends StatelessWidget {
   const BooklyApp({super.key});
-  // test
 
   @override
   Widget build(BuildContext context) {
@@ -17,10 +16,9 @@ class BooklyApp extends StatelessWidget {
       routerConfig: AppRouter.router,
       debugShowCheckedModeBanner: false,
       theme: ThemeData.dark().copyWith(
-        scaffoldBackgroundColor:kPrimaryColor,
+        scaffoldBackgroundColor: kPrimaryColor,
         textTheme: GoogleFonts.montserratTextTheme(ThemeData.dark().textTheme),
       ),
     );
   }
 }
-

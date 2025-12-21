@@ -6,8 +6,6 @@ import 'package:bookly_app/features/splash/presentation/views/widgets/sliding_te
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
-
-
 class SplashViewBody extends StatefulWidget {
   const SplashViewBody({super.key});
 
@@ -15,9 +13,8 @@ class SplashViewBody extends StatefulWidget {
   State<SplashViewBody> createState() => _SplashViewBodyState();
 }
 
-
-class _SplashViewBodyState extends State<SplashViewBody> with SingleTickerProviderStateMixin{
-
+class _SplashViewBodyState extends State<SplashViewBody>
+    with SingleTickerProviderStateMixin {
   late AnimationController animationController; // value [0-1]
 
   late Animation<Offset> slidingAnimation;
@@ -28,12 +25,13 @@ class _SplashViewBodyState extends State<SplashViewBody> with SingleTickerProvid
     initSlidingAnimation();
     navigateToHome();
   }
+
   @override
   void dispose() {
-
     super.dispose();
     animationController.dispose();
   }
+
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -41,31 +39,32 @@ class _SplashViewBodyState extends State<SplashViewBody> with SingleTickerProvid
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
         Image.asset(AssetsData.logo),
-        const SizedBox(height: 4,),
-        SlidingText(slidingAnimation:slidingAnimation),
+        const SizedBox(height: 4),
+        SlidingText(slidingAnimation: slidingAnimation),
       ],
     );
   }
 
-  void initSlidingAnimation(){
-    animationController =
-        AnimationController(vsync: this, duration: const Duration(seconds: 1));
+  void initSlidingAnimation() {
+    animationController = AnimationController(
+      vsync: this,
+      duration: const Duration(seconds: 1),
+    );
 
-    slidingAnimation =
-        Tween<Offset>(begin: const Offset(0, 2), end: Offset.zero).animate(
-            animationController);
+    slidingAnimation = Tween<Offset>(
+      begin: const Offset(0, 2),
+      end: Offset.zero,
+    ).animate(animationController);
 
     animationController.forward();
   }
 
   void navigateToHome() {
-    Future.delayed(const Duration(seconds: 3),
-          () {
-        //   Get.to(() => const HomeView(),transition:Transition.fade, duration: kTransitionDuration);
-        // });
+    Future.delayed(const Duration(seconds: 3), () {
+      //   Get.to(() => const HomeView(),transition:Transition.fade, duration: kTransitionDuration);
+      // });
 
-        GoRouter.of(context).push(AppRouter.kHomeView);
-      },
-    );
+      GoRouter.of(context).push(AppRouter.kHomeView);
+    });
   }
 }

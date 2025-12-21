@@ -1,9 +1,7 @@
-
 import 'package:bookly_app/constants.dart';
 import 'package:flutter/material.dart';
 
-abstract class Styles{
-
+abstract class Styles {
   static const textStyle14 = TextStyle(
     fontSize: 20,
     fontWeight: FontWeight.normal,
@@ -29,9 +27,6 @@ abstract class Styles{
     fontWeight: FontWeight.normal,
     fontFamily: kGtsSectraFine,
   );
-
-
-
 }
 
 // one font family for the whole app, maybe it be different in some small areas

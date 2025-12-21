@@ -12,7 +12,7 @@ class BookListViewItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: (){
+      onTap: () {
         GoRouter.of(context).push(AppRouter.kBookDetailsView);
       },
       child: SizedBox(
@@ -20,7 +20,7 @@ class BookListViewItem extends StatelessWidget {
         child: Row(
           children: [
             AspectRatio(
-              aspectRatio: 2.5/4, // width ratio to height ratio ,
+              aspectRatio: 2.5 / 4, // width ratio to height ratio ,
               child: Container(
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(8),
@@ -32,11 +32,11 @@ class BookListViewItem extends StatelessWidget {
                 ),
               ),
             ),
-            const SizedBox(width: 30,),
+            const SizedBox(width: 30),
             Expanded(
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
-                children:[
+                children: [
                   SizedBox(
                     width: MediaQuery.of(context).size.width * 0.5,
                     child: Text(
@@ -48,20 +48,21 @@ class BookListViewItem extends StatelessWidget {
                       overflow: TextOverflow.ellipsis,
                     ),
                   ),
-                  const SizedBox(height: 3,),
-                  const Text('J.K. Rowling', style: Styles.textStyle14,),
-                  const SizedBox(height: 3,),
+                  const SizedBox(height: 3),
+                  const Text('J.K. Rowling', style: Styles.textStyle14),
+                  const SizedBox(height: 3),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       Text(
                         '19.99€',
-                        style: Styles.textStyle20.copyWith(fontWeight: FontWeight.bold),
+                        style: Styles.textStyle20.copyWith(
+                          fontWeight: FontWeight.bold,
+                        ),
                       ),
                       const BookRating(),
                     ],
-                  )
-
+                  ),
                 ],
               ),
             ),

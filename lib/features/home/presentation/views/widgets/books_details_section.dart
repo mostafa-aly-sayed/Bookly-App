@@ -12,12 +12,16 @@ class BookDetailsSection extends StatelessWidget {
     var width = MediaQuery.of(context).size.width;
     return Column(
       children: [
-        Padding(padding: EdgeInsets.symmetric(horizontal: width * 0.2),
+        Padding(
+          padding: EdgeInsets.symmetric(horizontal: width * 0.2),
           child: CustomBookItem(),
         ),
-        const SizedBox(height: 43,),
-        Text('The Jungle Book', style: Styles.textStyle30.copyWith(fontWeight: FontWeight.bold),),
-        const SizedBox(height: 6,),
+        const SizedBox(height: 43),
+        Text(
+          'The Jungle Book',
+          style: Styles.textStyle30.copyWith(fontWeight: FontWeight.bold),
+        ),
+        const SizedBox(height: 6),
         Text(
           'Rudyard Kipling',
           style: Styles.textStyle18.copyWith(
@@ -26,13 +30,10 @@ class BookDetailsSection extends StatelessWidget {
             color: Colors.white.withValues(alpha: 0.7),
           ),
         ),
-        const SizedBox(height: 16,),
-        const BookRating(
-          mainAxisAlignment: MainAxisAlignment.center,
-        ),
-        const SizedBox(height: 20,),
+        const SizedBox(height: 16),
+        const BookRating(mainAxisAlignment: MainAxisAlignment.center),
+        const SizedBox(height: 20),
         const BooksAction(),
-
       ],
     );
   }
