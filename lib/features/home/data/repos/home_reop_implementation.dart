@@ -40,7 +40,7 @@ class HomeRepoImplementation implements HomeRepo{
           endPoint: 'volumes?q=subject&filter=free-ebooks');
       List<BookModel>books = [];
 
-      for (var item in data['items']) {
+      for (var item in data['items']){
         books.add(BookModel.fromJson(item));
       }
 
