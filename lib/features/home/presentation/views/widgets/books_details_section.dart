@@ -14,7 +14,9 @@ class BookDetailsSection extends StatelessWidget {
       children: [
         Padding(
           padding: EdgeInsets.symmetric(horizontal: width * 0.2),
-          child: CustomBookItem(),
+          child: CustomBookItem(
+            imageURL: 'https://upload.wikimedia.org/wikipedia/commons/4/47/PNG_transparency_demonstration_1.png',
+          ),
         ),
         const SizedBox(height: 43),
         Text(

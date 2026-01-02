@@ -13,7 +13,9 @@ class RecommendedBooksListView extends StatelessWidget {
         itemBuilder: (context, index) {
           return const Padding(
             padding: EdgeInsets.symmetric(horizontal: 5),
-            child: CustomBookItem(),
+            child: CustomBookItem(
+              imageURL: 'https://upload.wikimedia.org/wikipedia/commons/4/47/PNG_transparency_demonstration_1.png',
+            ),
           );
         },
       ),
