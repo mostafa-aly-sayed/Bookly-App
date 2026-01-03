@@ -1,5 +1,4 @@
 import 'package:equatable/equatable.dart';
-
 import 'image_links.dart';
 import 'industry_identifier.dart';
 import 'panelization_summary.dart';
@@ -27,6 +26,10 @@ class VolumeInfo extends Equatable {
   final String? infoLink;
   final String? canonicalVolumeLink;
 
+  /// ⭐ Ratings (optional, often missing)
+  final int? averageRating;
+  final int? ratingsCount;
+
   const VolumeInfo({
     this.title,
     this.subtitle,
@@ -48,6 +51,8 @@ class VolumeInfo extends Equatable {
     this.previewLink,
     this.infoLink,
     this.canonicalVolumeLink,
+    this.averageRating,
+    this.ratingsCount,
   });
 
   factory VolumeInfo.fromJson(Map<String, dynamic> json) => VolumeInfo(
@@ -58,11 +63,14 @@ class VolumeInfo extends Equatable {
     publishedDate: json['publishedDate'] as String?,
     description: json['description'] as String?,
     industryIdentifiers: (json['industryIdentifiers'] as List<dynamic>?)
-        ?.map((e) => IndustryIdentifier.fromJson(e as Map<String, dynamic>))
+        ?.map((e) =>
+        IndustryIdentifier.fromJson(e as Map<String, dynamic>))
         .toList(),
     readingModes: json['readingModes'] == null
         ? null
-        : ReadingModes.fromJson(json['readingModes'] as Map<String, dynamic>),
+        : ReadingModes.fromJson(
+      json['readingModes'] as Map<String, dynamic>,
+    ),
     pageCount: json['pageCount'] as int?,
     printType: json['printType'] as String?,
     categories: (json['categories'] as List<dynamic>?)?.cast<String>(),
@@ -72,13 +80,16 @@ class VolumeInfo extends Equatable {
     panelizationSummary: json['panelizationSummary'] == null
         ? null
         : PanelizationSummary.fromJson(
-            json['panelizationSummary'] as Map<String, dynamic>,
-          ),
-    imageLinks: ImageLinks.fromJson(json['imageLinks'] as Map<String, dynamic>),
+      json['panelizationSummary'] as Map<String, dynamic>,
+    ),
+    imageLinks:
+    ImageLinks.fromJson(json['imageLinks'] as Map<String, dynamic>),
     language: json['language'] as String?,
     previewLink: json['previewLink'] as String?,
     infoLink: json['infoLink'] as String?,
     canonicalVolumeLink: json['canonicalVolumeLink'] as String?,
+    averageRating: (json['averageRating'] as num?)?.round(),
+    ratingsCount: json['ratingsCount'] as int?,
   );
 
   Map<String, dynamic> toJson() => {
@@ -88,7 +99,8 @@ class VolumeInfo extends Equatable {
     'publisher': publisher,
     'publishedDate': publishedDate,
     'description': description,
-    'industryIdentifiers': industryIdentifiers?.map((e) => e.toJson()).toList(),
+    'industryIdentifiers':
+    industryIdentifiers?.map((e) => e.toJson()).toList(),
     'readingModes': readingModes?.toJson(),
     'pageCount': pageCount,
     'printType': printType,
@@ -97,36 +109,38 @@ class VolumeInfo extends Equatable {
     'allowAnonLogging': allowAnonLogging,
     'contentVersion': contentVersion,
     'panelizationSummary': panelizationSummary?.toJson(),
-    'imageLinks': imageLinks?.toJson(),
+    'imageLinks': imageLinks.toJson(),
     'language': language,
     'previewLink': previewLink,
     'infoLink': infoLink,
     'canonicalVolumeLink': canonicalVolumeLink,
+    'averageRating': averageRating,
+    'ratingsCount': ratingsCount,
   };
 
   @override
-  List<Object?> get props {
-    return [
-      title,
-      subtitle,
-      authors,
-      publisher,
-      publishedDate,
-      description,
-      industryIdentifiers,
-      readingModes,
-      pageCount,
-      printType,
-      categories,
-      maturityRating,
-      allowAnonLogging,
-      contentVersion,
-      panelizationSummary,
-      imageLinks,
-      language,
-      previewLink,
-      infoLink,
-      canonicalVolumeLink,
-    ];
-  }
+  List<Object?> get props => [
+    title,
+    subtitle,
+    authors,
+    publisher,
+    publishedDate,
+    description,
+    industryIdentifiers,
+    readingModes,
+    pageCount,
+    printType,
+    categories,
+    maturityRating,
+    allowAnonLogging,
+    contentVersion,
+    panelizationSummary,
+    imageLinks,
+    language,
+    previewLink,
+    infoLink,
+    canonicalVolumeLink,
+    averageRating,
+    ratingsCount,
+  ];
 }
