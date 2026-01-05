@@ -23,7 +23,7 @@ class BooksListView extends StatelessWidget {
                   return Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 8),
                     child: CustomBookItem(
-                      imageURL: state.books[index].volumeInfo.imageLinks.thumbnail,
+                      imageURL: state.books[index].volumeInfo.imageLinks?.thumbnail ?? '',
                     ),
                   );
                 },
