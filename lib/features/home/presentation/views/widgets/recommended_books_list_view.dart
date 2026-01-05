@@ -17,12 +17,13 @@ class RecommendedBooksListView extends StatelessWidget {
             return SizedBox(
               height: MediaQuery.of(context).size.height * 0.15,
               child: ListView.builder(
+                itemCount: state.books.length,
                 scrollDirection: Axis.horizontal,
                 itemBuilder: (context, index) {
-                  return const Padding(
-                    padding: EdgeInsets.symmetric(horizontal: 5),
+                  return Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 5),
                     child: CustomBookItem(
-                      imageURL: 'https://upload.wikimedia.org/wikipedia/commons/4/47/PNG_transparency_demonstration_1.png',
+                      imageURL: state.books[index].volumeInfo.imageLinks?.thumbnail ?? '',
                     ),
                   );
                 },
